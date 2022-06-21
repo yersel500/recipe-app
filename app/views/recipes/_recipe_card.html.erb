@@ -11,8 +11,9 @@
     </div>
     <div class="recipe-desc-holder">
       <p class="recipe-description"><%= recipe.description %></p>
-      <h2><%= recipe.public %></h2>
-      <% if can? :manage  || recipe.public, recipe %>
+      <% if can? :manage, recipe %>
+        <%= link_to "See details", user_recipe_path(user_id: recipe.user_id, id: recipe.id), class:"btn-solid" %>
+      <% elsif public? recipe %>
         <%= link_to "See details", user_recipe_path(user_id: recipe.user_id, id: recipe.id), class:"btn-solid" %>
       <% end %>
     </div>
