@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-*, html {
+*,
+html {
   box-sizing: border-box;
   padding: 0;
   font-family: 'Roboto', sans-serif;
@@ -10,11 +11,10 @@
 :root {
   --typography: #213a5a;
   --secondary-color: #f37a6d;
-  --bg-color:#ffffff;
-  --shadow-color:#f6f5f3 ;
+  --bg-color: #fff;
+  --shadow-color: #f6f5f3;
 }
 
 body {
   background-color: var(--bg-color);
 }
-

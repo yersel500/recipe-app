@@ -1,0 +1,9 @@
+<h1>Foods</h1>
+<ul>
+  <% @foods.each do |food| %>
+    <li>
+      <%= link_to food.name, user_food_path(user_id: food.user_id, id: food.id) %>
+    </li>
+  <% end %>
+</ul>
+<%= link_to "New Food", new_user_food_path %>
