@@ -10,8 +10,8 @@
   </div>
   <div>
     <div class="field form-group w-50">
-      <%= form.label :preparation_time %><br />
-      <%= form.number_field :preparation_time, autofocus: true, step: :any, autocomplete: "preparation_time"%>
+      <%= form.label :preparation_time, class:"form-label" %><br />
+      <%= form.number_field :preparation_time, autofocus: true, step: :any, autocomplete: "preparation_time", class: "form-control" %>
     </div>
     <% @recipe.errors.full_messages_for(:preparation_time).each do |message| %>
       <div><%= message %></div>
