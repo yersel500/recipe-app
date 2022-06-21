@@ -1,1 +1,5 @@
-<%=  link_to "Sign out", destroy_user_session_path, data: { turbo_method: :delete }, class: 'btn-bar' %>
+<% if user_signed_in? %>
+  <%=  link_to "Sign out", destroy_user_session_path,
+                          method: :delete,
+                          class: 'btn-bar' %>
+<%end %>

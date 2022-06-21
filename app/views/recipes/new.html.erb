@@ -1,22 +1,48 @@
-<h1>New Recipe</h1>
-<%= form_with model: @recipe, url: user_recipes_path, method: :post do |form| %>
-  <p>
-    <%= form.label :name %><br>
-    <%= form.text_field :name %>
-  </p>
-  <p>
-    <%= form.label :preparation_time %><br>
-    <%= form.number_field :preparation_time %>
-  </p>
-  <p>
-    <%= form.label :cooking_time %><br>
-    <%= form.number_field :cooking_time %>
-  </p>
-  <p>
-    <%= form.label :description %><br>
-    <%= form.text_area :description %>
-  </p>
-  <p>
-    <%= form.submit %>
-  </p>
+<%= form_with model: @recipe, url: user_recipes_path  do |form| %>
+  <div>
+    <div class="field form-group w-50">
+      <%= form.label :name %><br />
+      <%= form.text_field :name, autofocus: true, autocomplete: "name"%>
+    </div>
+    <% @recipe.errors.full_messages_for(:name).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+  <div>
+    <div class="field form-group w-50">
+      <%= form.label :preparation_time, class:"form-label" %><br />
+      <%= form.number_field :preparation_time, autofocus: true, step: :any, autocomplete: "preparation_time", class: "form-control" %>
+    </div>
+    <% @recipe.errors.full_messages_for(:preparation_time).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+  <div>
+    <div class= "field">
+      <%= form.label :cooking_time %><br />
+      <%= form.number_field :cooking_time, autofocus: true, step: :any, autocomplete: "cooking_time"%>
+    </div>
+    <% @recipe.errors.full_messages_for(:cooking_time).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+  <div>
+    <div class="field">
+      <%= form.label :description %><br />
+      <%= form.text_area :description, autofocus: true, autocomplete: "description" , size: "70x6"  %>
+    </div>
+    <% @recipe.errors.full_messages_for(:description).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+  <div>
+    <div class="field">
+      <%= form.label :public %><br />
+      <%= form.check_box :public %>
+    </div>
+    <% @recipe.errors.full_messages_for(:public).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+  <%= form.submit "Create Post", class:"btn-solid"%>
 <% end %>

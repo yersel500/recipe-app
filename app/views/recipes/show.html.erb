@@ -12,7 +12,9 @@
   </div>
   <div class="recipe-button-group">
     <%= link_to "Generate Shopping List" ,user_recipes_path, class: "btn-solid" %>
-    <%= link_to "Add Ingredient", user_recipes_path, class: "btn-solid" %>
+    <% if can? :manage, @recipe %>
+      <%= link_to "Add Ingredient", user_recipes_path, class: "btn-solid" %>
+    <%end%>
   </div>
   <hr />
   <%= render partial: "table" %>
