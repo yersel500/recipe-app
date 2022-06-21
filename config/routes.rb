@@ -9,4 +9,6 @@ Rails.application.routes.draw do
       resources :recipe_foods
     end
   end
+
+  get "/public_list",  to: "recipes#public_recipes", as: "public_recipes"
 end
