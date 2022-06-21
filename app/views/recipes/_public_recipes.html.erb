@@ -1,0 +1,8 @@
+<% @public_recipes.each do |recipe| %>
+  <div class="card">
+    <h2> <%= recipe.name %> </h2>
+    <p> By <%= recipe.user.name %>
+    <p> Total Food Items: <%= recipe.foods.count %>
+    <p> Total Price: <%= calulate_price(recipe) %>
+  </div>
+<% end %>
