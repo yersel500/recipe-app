@@ -10,6 +10,24 @@ class RecipesController < ApplicationController
     @foods = Food.all
   end
 
+  def new
+    @user = current_user
+    @recipe = Recipe.new
+  end
+
+  def create
+    user = current_user
+    @recipe = Recipe.new(recipe_params)
+    @recipe.user = user
+    @recipe.public = true
+
+    if @recipe.save
+      redirect_to user_recipe_path(user_id: @recipe.user_id, id: @recipe.id)
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+
   def destroy
     @recipe = Recipe.find(params[:id])
     if @recipe.destroy
@@ -19,5 +37,11 @@ class RecipesController < ApplicationController
       flash[:alert] = 'Unable to delete the recipe.'
       render user_recipe_path(@recipe)
     end
+  end
+
+  private
+
+  def recipe_params
+    params.require(:recipe).permit(:name, :preparation_time, :cooking_time, :description)
   end
 end
