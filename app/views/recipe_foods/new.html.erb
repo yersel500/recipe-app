@@ -1,0 +1,14 @@
+<h1>Add Recipe Foods</h1>
+<%= form_with model: @recipe_food, url: user_recipe_recipe_foods_path, method: :post do |form| %>
+  <p>
+    <%= form.label :quantity %><br>
+    <%= form.number_field :quantity %>
+  </p>
+  <p>
+    <%= form.label :food_id %><br>
+    <%= form.collection_select :food_id, Food.order(:name), :id, :name %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
