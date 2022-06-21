@@ -1,0 +1,23 @@
+<table class="table">
+  <tr>
+    <th class="table-heading"><%= link_to "Food", sort:"food" %> </th>
+    <th class="table-heading"><%= link_to "Quantity", sort: "quantity" %> </th>
+    <th class="table-heading">Value </th>
+    <th class="table-heading">Actions</th>
+  </tr>
+  <% @foods.each do |food| %>
+    <tr class="table-row">
+      <td class="table-content"><%= food.name %></td>
+      <td class="table-content">
+        <% food.measurement_unit %>
+      </td>
+      <td class="table-content"> $<%= food.price %> </td>
+      <td class="table-content">
+        <div class="buttons">
+          <%= button_to "Update", user_recipes_path, method: :update, class: "btn-link" %>
+          <%= button_to "Remove", user_recipes_path,  method: :delete, class: "btn-link" %>
+        </div>
+      </td>
+    </tr>
+  <% end %>
+</table>

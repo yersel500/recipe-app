@@ -5,6 +5,7 @@
   padding: 0;
   font-family: 'Roboto', sans-serif;
   margin: 0;
+  font-size: 16px;
 }
 
 :root {
@@ -16,5 +17,161 @@
 
 body {
   background-color: var(--bg-color);
+  margin:  0 5%;
+  color:  var(--typography);
 }
 
+.recipes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.recipe-card {
+  display: flex;
+  column-gap: 2rem;
+  padding: 1rem 2rem;
+  box-shadow: 2px 2px 10px var(--typography);
+  min-height: 10rem;
+  border-radius: 0.5rem;
+  transition: transform 0.5s;
+}
+
+.recipe-card:hover {
+  transform: scale(1.002);
+}
+
+.recipe-btn-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.btn-link {
+  padding:  0;
+  background-color:  transparent;
+  border: none;
+  color:  var(--secondary-color);
+  font-size: 1rem;
+  font-weight: 700;
+  cursor:  pointer;
+}
+
+.recipe-card-link {
+  text-decoration: none;
+}
+
+.recipe-details {
+  padding:  1rem 2rem;
+}
+
+.recipe-time {
+  display: flex;
+  flex-direction:  column;
+  line-height: 1.5;
+  padding:  1rem;
+}
+
+.recipe-button-group {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.btn-solid {
+  outline: none;
+  border:  none;
+  background-color:  var(--secondary-color);
+  color: var(--bg-color);
+  border-radius: 0.2rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding:  0.8rem;
+  font-weight:  600;
+  letter-spacing: 1.2px;
+  transition:  all 0.5s ease;
+}
+
+.btn-solid:hover {
+  transform:  scale(0.99);
+  background-color: #bd210f
+}
+
+hr {
+  height: 3px;
+  background-color:  var(--secondary-color);
+
+}
+
+td, th {
+  padding: 0.5rem;
+}
+
+th {
+  text-align: left;
+  font-weight: 700;
+  font-size: 20px;
+  font-size: 1.25rem;
+}
+
+.table {
+  width: 100%;
+  padding: 1rem 0 ;
+  background-color:  var(--shadow-color);
+}
+
+tr:nth-child(odd) {
+  background-color: var(--shadow-color);
+}
+
+tr:nth-child(even) {
+  background-color: var(--bg-color);
+}
+
+.table-heading {
+  border-bottom: 2px solid var(--secondary-color);
+  font-weight:  700;
+}
+
+.table-content {
+   width: 25%;
+   transition:  background-color 0.5s;
+}
+
+.table-content:hover {
+  background-color:  #fbd4d0;
+}
+
+.table-content .buttons {
+  display: flex;
+  gap:  1rem;
+}
+
+@media (max-width: 32rem) {
+  .table-heading {
+    display: none;
+  }
+
+  .table-content {
+    display: block;
+    margin-right:  1rem;
+    padding: 0.5rem 0;
+  }
+
+  .table-row {
+     margin: 0.25rem 1rem;
+     padding: 0.5rem 0;
+     display: block;
+     border-bottom: 2px solid var(--typography);
+  }
+
+  .table-content:before {
+     display: inline-block;
+     width: 5rem;
+     margin-right: 1rem;
+     font-size: .75rem;
+     font-weight: 700;
+     text-transform: uppercase;
+     letter-spacing: 2px;
+  }
+}
