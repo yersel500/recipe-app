@@ -1,12 +1,14 @@
 <table class="table">
   <tr>
+    <th class="table-heading"> # </th>
     <th class="table-heading"><%= link_to "Food", sort:"food" %> </th>
     <th class="table-heading"><%= link_to "Quantity", sort: "quantity" %> </th>
     <th class="table-heading">Value </th>
     <th class="table-heading">Actions</th>
   </tr>
-  <% @foods.each do |food| %>
+  <% @foods.each_with_index do |food, index| %>
     <tr class="table-row">
+      <td class="table-content"><%= index + 1 %></td>
       <td class="table-content"><%= food.name %></td>
       <td class="table-content">
         <% food.measurement_unit %>

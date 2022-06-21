@@ -13,10 +13,10 @@ class RecipesController < ApplicationController
   def destroy
     @recipe = Recipe.find(params[:id])
     if @recipe.destroy
-      flash[:notice] = "The recipe is deleted!"
+      flash[:notice] = 'The recipe is deleted!'
       redirect_to user_recipes_path(user_id: params[:user_id])
     else
-      flash[:alert] = "Unable to delete the recipe."
+      flash[:alert] = 'Unable to delete the recipe.'
       render user_recipe_path(@recipe)
     end
   end

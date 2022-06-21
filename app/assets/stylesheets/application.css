@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-*, html {
+*,
+html {
   box-sizing: border-box;
   padding: 0;
   font-family: 'Roboto', sans-serif;
@@ -11,14 +12,14 @@
 :root {
   --typography: #213a5a;
   --secondary-color: #f37a6d;
-  --bg-color:#ffffff;
-  --shadow-color:#f6f5f3 ;
+  --bg-color: #fff;
+  --shadow-color: #f6f5f3;
 }
 
 body {
   background-color: var(--bg-color);
-  margin:  0 5%;
-  color:  var(--typography);
+  margin: 0 5%;
+  color: var(--typography);
 }
 
 .recipes-list {
@@ -48,13 +49,13 @@ body {
 }
 
 .btn-link {
-  padding:  0;
-  background-color:  transparent;
+  padding: 0;
+  background-color: transparent;
   border: none;
-  color:  var(--secondary-color);
+  color: var(--secondary-color);
   font-size: 1rem;
   font-weight: 700;
-  cursor:  pointer;
+  cursor: pointer;
 }
 
 .recipe-card-link {
@@ -62,14 +63,14 @@ body {
 }
 
 .recipe-details {
-  padding:  1rem 2rem;
+  padding: 1rem 2rem;
 }
 
 .recipe-time {
   display: flex;
-  flex-direction:  column;
+  flex-direction: column;
   line-height: 1.5;
-  padding:  1rem;
+  padding: 1rem;
 }
 
 .recipe-button-group {
@@ -80,30 +81,30 @@ body {
 
 .btn-solid {
   outline: none;
-  border:  none;
-  background-color:  var(--secondary-color);
+  border: none;
+  background-color: var(--secondary-color);
   color: var(--bg-color);
   border-radius: 0.2rem;
   text-transform: uppercase;
   text-decoration: none;
-  padding:  0.8rem;
-  font-weight:  600;
+  padding: 0.8rem;
+  font-weight: 600;
   letter-spacing: 1.2px;
-  transition:  all 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 .btn-solid:hover {
-  transform:  scale(0.99);
-  background-color: #bd210f
+  transform: scale(0.99);
+  background-color: #bd210f;
 }
 
 hr {
   height: 3px;
-  background-color:  var(--secondary-color);
-
+  background-color: var(--secondary-color);
 }
 
-td, th {
+td,
+th {
   padding: 0.5rem;
 }
 
@@ -116,8 +117,16 @@ th {
 
 .table {
   width: 100%;
-  padding: 1rem 0 ;
-  background-color:  var(--shadow-color);
+  padding: 1rem 0;
+  background-color: var(--shadow-color);
+}
+
+tr {
+  transition: background-color 0.5s;
+}
+
+tr:hover {
+  background-color: #fbd4d0;
 }
 
 tr:nth-child(odd) {
@@ -130,21 +139,16 @@ tr:nth-child(even) {
 
 .table-heading {
   border-bottom: 2px solid var(--secondary-color);
-  font-weight:  700;
+  font-weight: 700;
 }
 
 .table-content {
-   width: 25%;
-   transition:  background-color 0.5s;
-}
-
-.table-content:hover {
-  background-color:  #fbd4d0;
+  width: 25%;
 }
 
 .table-content .buttons {
   display: flex;
-  gap:  1rem;
+  gap: 1rem;
 }
 
 @media (max-width: 32rem) {
@@ -154,24 +158,24 @@ tr:nth-child(even) {
 
   .table-content {
     display: block;
-    margin-right:  1rem;
+    margin-right: 1rem;
     padding: 0.5rem 0;
   }
 
   .table-row {
-     margin: 0.25rem 1rem;
-     padding: 0.5rem 0;
-     display: block;
-     border-bottom: 2px solid var(--typography);
+    margin: 0.25rem 1rem;
+    padding: 0.5rem 0;
+    display: block;
+    border-bottom: 2px solid var(--typography);
   }
 
-  .table-content:before {
-     display: inline-block;
-     width: 5rem;
-     margin-right: 1rem;
-     font-size: .75rem;
-     font-weight: 700;
-     text-transform: uppercase;
-     letter-spacing: 2px;
+  .table-content::before {
+    display: inline-block;
+    width: 5rem;
+    margin-right: 1rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
   }
 }
