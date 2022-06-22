@@ -1,0 +1,44 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-secondary px-lg-5 px-2 text-waring">
+  <%= link_to "MakeUrFood", public_recipes_path, class:"navbar-brand" %>       
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">  
+      <li class="nav-item active">   
+        <%= link_to "Home", public_recipes_path, class:"nav-link active" %>       
+      </li>  
+
+      <% if user_signed_in? %>      
+        <li class="nav-item active">
+          <%= link_to "Edit Profile", edit_user_registration_path, class:"nav-link active"%>
+        </li>
+        <li class="nav-item active">
+          <%= link_to "Foods", user_foods_path(user_id: current_user.id), class:"nav-link active"%>
+        </li>
+
+         <li class="nav-item active">
+          <%= link_to "Recipes", user_recipes_path(user_id: current_user.id), class:"nav-link active"%>
+        </li>
+        <li class="nav-item active">
+          <%= link_to "Logout", destroy_user_session_path, method: :delete, class:"nav-link active"%>
+        </li>
+      <% else %>
+        
+        <li class="nav-item active">
+          <%= link_to 'Register', new_user_registration_path, method: :post, class:"nav-link active" %>
+        </li>
+        <li class="nav-item active">
+          <%= link_to 'Log in', new_user_session_path, class:"nav-link active" %>
+        </li>
+    <% end %> 
+    </ul>
+    <% if user_signed_in? %>
+      <div class="d-flex gap-3 align-items-center">
+        Welcome
+        <label class="text-warning" > <%= current_user.name %></label>       
+      </div>
+    <% end %>
+  </div>
+</nav>
