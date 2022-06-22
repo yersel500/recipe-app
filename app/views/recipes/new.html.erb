@@ -36,9 +36,9 @@
     <% end %>
   </div>
   <div>
-    <div class="field">
-      <%= form.label :public %><br />
-      <%= form.check_box :public %>
+    <div class="form-check form-switch">
+      <%= form.label :public, class: "form-check-label" %>
+      <%= form.check_box :public, class: "form-check-input" %>
     </div>
     <% @recipe.errors.full_messages_for(:public).each do |message| %>
       <div><%= message %></div>
