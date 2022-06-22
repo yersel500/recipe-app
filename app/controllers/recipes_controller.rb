@@ -5,10 +5,15 @@ class RecipesController < ApplicationController
     @recipes = @user.recipes.all
   end
 
+  def shopping_list
+    @recipes = User.find(params[:user_id]).recipes
+    @foods = Food.all
+    # @recipe_foods = @recipe.recipe_foods
+  end
+
   def show
     @recipe = Recipe.includes(:recipe_foods).find(params[:id])
     @recipe_foods = @recipe.recipe_foods
-    @foods = Food.all
   end
 
   def new
