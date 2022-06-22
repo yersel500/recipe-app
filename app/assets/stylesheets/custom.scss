@@ -13,12 +13,16 @@ html {
   --typography: #213a5a;
   --secondary-color: #f37a6d;
   --bg-color: #fff;
-  --shadow-color: #f6f5f3;
+  --shadow-color: #fff2f2;
+}
+
+.navbar {
+  background-color: var(--shadow-color);
+  color: var(--typography)
 }
 
 body {
   background-color: var(--bg-color);
-  margin: 0 5%;
   color: var(--typography);
 }
 
@@ -191,4 +195,8 @@ tr:nth-child(even) {
     text-transform: uppercase;
     letter-spacing: 2px;
   }
+}
+
+.navbar-brand {
+font-weight: 900;
 }
