@@ -15,8 +15,8 @@
       </td>
       <td class="table-content"> $<%= food.price %> </td>
       <td class="table-content">
-        <div class="buttons">         
-          <%= button_to "Delete", user_foods_path,  method: :delete, class: "btn-link-custom" %>
+        <div class="buttons">
+          <%= button_to "Delete", delete_food_path(user_id: food.user_id, id: food.id),  method: :delete, class: "btn-link-custom" %>
         </div>
       </td>
     </tr>
