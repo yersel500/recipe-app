@@ -1,0 +1,16 @@
+<table class="table">
+  <tr>
+    <th class="table-heading"><%= link_to "Food", sort:"food" %> </th>
+    <th class="table-heading"><%= link_to "Quantity", sort: "quantity" %> </th>
+    <th class="table-heading"> Price </th>
+  </tr>
+  <% total_food.each do |key, quantity| %>
+    <tr class="table-row">
+      <td class="table-content"><%= @foods.find(key).name %></td>
+      <td class="table-content">
+        <%= quantity %>
+      </td>
+      <td class="table-content"> $<%= @foods.find(key).price * quantity %> </td>
+    </tr>
+  <% end %>
+</table>
