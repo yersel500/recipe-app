@@ -29,16 +29,16 @@
         <li class="nav-item active">
           <%= link_to 'Register', new_user_registration_path, method: :post, class:"nav-link active" %>
         </li>
-        <li class="nav-item active">
-          <%= link_to 'Log in', new_user_session_path, class:"nav-link active" %>
-        </li>
+     
     <% end %> 
     </ul>
     <% if user_signed_in? %>
-      <div class="d-flex gap-3 align-items-center">
-        Welcome
-        <label class="text-warning" > <%= current_user.name %></label>       
+      <div class="d-flex gap-1 align-items-center text-light">
+        Welcome,
+        <label class="text-warning" > <%= current_user.name %></label>   
+        <%= link_to "Logout", destroy_user_session_path, method: :delete, class:"btn btn-warning ms-2 text-decoration-none"%>
       </div>
+        
     <% end %>
   </div>
 </nav>
