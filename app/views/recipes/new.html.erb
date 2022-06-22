@@ -1,8 +1,9 @@
+<h2 class="my-3"> Create new recipe </h2>
 <%= form_with model: @recipe, url: user_recipes_path  do |form| %>
   <div>
     <div class="field form-group w-50">
-      <%= form.label :name %><br />
-      <%= form.text_field :name, autofocus: true, autocomplete: "name"%>
+      <%= form.label :name, class: "form-label" %><br />
+      <%= form.text_field :name, autofocus: true, autocomplete: "name", class: "form-control" %>
     </div>
     <% @recipe.errors.full_messages_for(:name).each do |message| %>
       <div><%= message %></div>
@@ -18,31 +19,31 @@
     <% end %>
   </div>
   <div>
-    <div class= "field">
-      <%= form.label :cooking_time %><br />
-      <%= form.number_field :cooking_time, autofocus: true, step: :any, autocomplete: "cooking_time"%>
+    <div class="field form-group w-50">
+      <%= form.label :cooking_time, class:"form-label" %><br />
+      <%= form.number_field :cooking_time, autofocus: true, step: :any, autocomplete: "cooking_time", class: "form-control"%>
     </div>
     <% @recipe.errors.full_messages_for(:cooking_time).each do |message| %>
       <div><%= message %></div>
     <% end %>
   </div>
   <div>
-    <div class="field">
-      <%= form.label :description %><br />
-      <%= form.text_area :description, autofocus: true, autocomplete: "description" , size: "70x6"  %>
+    <div class="field form-group w-50">
+      <%= form.label :description, class:"form-label" %><br />
+      <%= form.text_area :description, autofocus: true, autocomplete: "description",rows: 6, class: "form-control"  %>
     </div>
     <% @recipe.errors.full_messages_for(:description).each do |message| %>
       <div><%= message %></div>
     <% end %>
   </div>
   <div>
-    <div class="field">
-      <%= form.label :public %><br />
+    <div class="field form-group w-50">
+      <%= form.label :public, class:"form-label" %><br />
       <%= form.check_box :public %>
     </div>
     <% @recipe.errors.full_messages_for(:public).each do |message| %>
       <div><%= message %></div>
     <% end %>
   </div>
-  <%= form.submit "Create Post", class:"btn-solid"%>
+  <%= form.submit "Create Recipe", class: 'btn-solid my-3 px-5 py-2'%>
 <% end %>
