@@ -207,7 +207,7 @@ tr:nth-child(even) {
   width: 100%;
 
   option {
-    font-size: 1rem;   
+    font-size: 1rem;
     padding: 10px 0;
   }
 }
@@ -229,22 +229,21 @@ tr:nth-child(even) {
   display: flex;
   flex-direction: column;
   align-items: start;
-  top:0;
-  right: 5%;  
-  
+  top: 0;
+  right: 5%;
+
   label {
     padding-top: 10px;
-    font-weight: 900;   
+    font-weight: 900;
   }
 
   #public_selector {
-    position: absolute; 
-
+    position: absolute;
   }
 
   .btn-public {
     position: absolute;
-    top:0;
+    top: 0;
     right: 5%;
     width: 5rem;
     height: 3rem;
@@ -252,6 +251,5 @@ tr:nth-child(even) {
     opacity: 1;
     outline: none;
     border: none;
-
   }
 }
