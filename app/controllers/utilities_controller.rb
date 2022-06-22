@@ -8,4 +8,10 @@ class UtilitiesController < ApplicationController
       flash[:alert] = 'Unable to delete'
     end
   end
+
+  def toggle_public
+    @recipe = Recipe.find(params[:id])
+    @recipe.update(public: !@recipe.public)
+    redirect_to user_recipe_path
+  end
 end
