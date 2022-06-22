@@ -10,9 +10,12 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
+  <body  >
+    <%=  render partial: "shared/navbar" %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <%= yield %>
+    <main class= "px-lg-5 px-2" >
+      <%= yield %>
+    </main>
   </body>
 </html>
