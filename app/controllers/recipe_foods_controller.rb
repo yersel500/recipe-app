@@ -13,8 +13,7 @@ class RecipeFoodsController < ApplicationController
     @recipe_food.recipe_id = params[:recipe_id]
 
     if @recipe_food.save
-      redirect_to user_recipe_recipe_food_path(user_id: params[:user_id], recipe_id: @recipe_food.recipe_id,
-                                               id: @recipe_food.id)
+      redirect_to user_recipe_path(user_id: params[:user_id], id: @recipe_food.recipe_id)
     else
       render :new, status: :unprocessable_entity
     end
