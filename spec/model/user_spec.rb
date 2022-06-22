@@ -10,7 +10,7 @@ RSpec.describe User, type: :model do
 
   describe 'creates user' do
     it 'and returns the name of the user' do
-      expect(@user.name).to eq ('Babi')
+      expect(@user.name).to eq('Babi')
     end
   end
 end
