@@ -52,6 +52,8 @@ gem 'cancancan'
 gem 'devise'
 gem 'rubocop', '>= 1.0', '< 2.0'
 
+gem 'sassc', '~> 2.1.0'
+
 gem 'bootstrap', '~> 5.1', '>= 5.1.3'
 
 group :development, :test do

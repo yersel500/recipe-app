@@ -11,9 +11,9 @@
     <%= button_to "Steps go here..",user_recipes_path, class: "btn-link" %>
   </div>
   <div class="recipe-button-group">
-    <%= link_to "Generate Shopping List" ,user_recipes_path, class: "btn-solid" %>
+    <%= link_to "Generate Shopping List" ,recipe_shopping_path, class: "btn-solid" %>
     <% if can? :manage, @recipe %>
-      <%= link_to "Add Ingredient", user_recipes_path, class: "btn-solid" %>
+      <%= link_to "Add Ingredient", new_user_recipe_recipe_food_path(user_id: @recipe.user_id, recipe_id: @recipe.id), class: "btn-solid" %>
     <%end%>
   </div>
   <hr />
