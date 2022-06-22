@@ -8,4 +8,12 @@ class UtilitiesController < ApplicationController
       flash[:alert] = 'Unable to delete'
     end
   end
+
+  def delete_food_from_recipe
+    @recipe = Recipe.find(params[:id])
+
+    @recipe.foods.select! do |food|
+      food.id != params[:food_id]
+    end
+  end
 end

@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   get '/users/:user_id/shopping', to: 'recipes#shopping_list', as: 'recipe_shopping'
   get '/public_list', to: 'recipes#public_recipes', as: 'public_recipes'
   delete '/users/:user_id/foods/:id/delete', to: 'utilities#delete_food', as: 'delete_food'
+  get '/users/:user_id/recipes/:id/remove', to: 'utilities#remove_food', as: 'remove_food'
 end
