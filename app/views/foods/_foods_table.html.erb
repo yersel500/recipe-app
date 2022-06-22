@@ -1,0 +1,24 @@
+<table class="table">
+  <tr>
+    <th class="table-heading"> # </th>
+    <th class="table-heading"><%= link_to "Food", sort:"food" %> </th>
+    <th class="table-heading"><%= link_to "Measurement Unit", sort: "quantity" %> </th>
+    <th class="table-heading">Unit Price </th>
+    <th class="table-heading">Actions</th>
+  </tr>
+  <% @foods.each_with_index do |food, index| %>
+    <tr class="table-row">
+      <td class="table-content"><%= index + 1 %></td>
+      <td class="table-content"><%= food.name %></td>
+      <td class="table-content">
+        <%= food.measurement_unit %>
+      </td>
+      <td class="table-content"> $<%= food.price %> </td>
+      <td class="table-content">
+        <div class="buttons">         
+          <%= button_to "Delete", user_foods_path,  method: :delete, class: "btn-link-custom" %>
+        </div>
+      </td>
+    </tr>
+  <% end %>
+</table>
