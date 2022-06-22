@@ -18,7 +18,7 @@ html {
 
 .navbar {
   background-color: var(--shadow-color);
-  color: var(--typography)
+  color: var(--typography);
 }
 
 body {
@@ -28,7 +28,7 @@ body {
 
 .recipes-list {
   display: flex;
-  flex-direction: column;  
+  flex-direction: column;
 }
 
 .recipe-card {
@@ -198,5 +198,5 @@ tr:nth-child(even) {
 }
 
 .navbar-brand {
-font-weight: 900;
+  font-weight: 900;
 }
