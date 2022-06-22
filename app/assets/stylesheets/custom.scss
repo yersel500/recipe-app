@@ -13,19 +13,22 @@ html {
   --typography: #213a5a;
   --secondary-color: #f37a6d;
   --bg-color: #fff;
-  --shadow-color: #f6f5f3;
+  --shadow-color: #fff2f2;
+}
+
+.navbar {
+  background-color: var(--shadow-color);
+  color: var(--typography);
 }
 
 body {
   background-color: var(--bg-color);
-  margin: 0 5%;
   color: var(--typography);
 }
 
 .recipes-list {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
 }
 
 .recipe-card {
@@ -58,7 +61,7 @@ body {
   width: 8rem;
 }
 
-.btn-link {
+.btn-link-custom {
   padding: 0;
   background-color: transparent;
   border: none;
@@ -90,6 +93,8 @@ body {
 }
 
 .btn-solid {
+  outline: none;
+  border: none;
   background-color: var(--secondary-color);
   color: var(--bg-color);
   border-radius: 0.2rem;
@@ -101,10 +106,12 @@ body {
   letter-spacing: 1.2px;
   transition: all 0.5s ease-in-out;
   text-align: center;
+  max-width: 15rem;
 }
 
 .btn-solid:hover {
   transform: scale(0.99);
+  color: var(--bg-color);
   background-color: #bd210f;
 }
 
@@ -188,4 +195,8 @@ tr:nth-child(even) {
     text-transform: uppercase;
     letter-spacing: 2px;
   }
+}
+
+.navbar-brand {
+  font-weight: 900;
 }

@@ -11,8 +11,10 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= yield %>
+    <%=  render partial: "shared/navbar" %>
+    <%= render partial: "shared/message" %>
+    <main class= "px-lg-5 px-2" >
+      <%= yield %>
+    </main>
   </body>
 </html>

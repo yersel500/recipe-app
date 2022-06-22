@@ -1,14 +1,13 @@
 <section class="recipe-details">
   <h2><%= @recipe.name %></h2>
   <div class="recipe-time">
-    <%= @recipe.preparation_time %>
     <p class="recipe-prepartion"><strong>Preparation Time: </strong>
       <%= @recipe.preparation_time %> hours
     </p>
     <p class="recipe-cooking"><strong>Cooking Time:</strong>
       <%= @recipe.cooking_time %> hours
     </p>
-    <%= button_to "Steps go here..",user_recipes_path, class: "btn-link" %>
+    <%= button_to "Steps go here..",user_recipes_path, class: "btn-link-custom" %>
   </div>
   <div class="recipe-button-group">
     <%= link_to "Generate Shopping List" ,recipe_shopping_path, class: "btn-solid" %>

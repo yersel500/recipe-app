@@ -1,0 +1,12 @@
+<% @public_recipes.each do |recipe| %>
+  <div class="recipe-card py-3 px-5 my-2 d-flex gap-5 flex-row">
+    <div>
+      <h2> <%= recipe.name %> </h2>
+      <p> By <%= recipe.user.name %>
+    </div>
+    <div>
+      <p> Total Food Items: <%= recipe.foods.count %>
+      <p> Total Price: <%= calulate_price(recipe) %>
+    </div>
+  </div>
+<% end %>

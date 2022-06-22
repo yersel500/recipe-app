@@ -1,15 +1,15 @@
 <% @recipes.each do |recipe| %>
   <div class="recipe-card">
     <div class="recipe-btn-title">
-      <h2 class="recipe-name"><%= recipe.name %> </h2>
+      <h3 class="recipe-name"><%= recipe.name %> </h3>
       <% if can? :manage, recipe %>
         <%= button_to "REMOVE",
           user_recipe_path(user_id: recipe.user_id, id: recipe),  method: :delete,
           data: { confirm: "Are you sure?" },
-          class: "btn-link" %>
+          class: "btn-link-custom" %>
       <% end %>
     </div>
-    <div class="recipe-desc-holder">
+    <div class="recipe-desc-holder ps-lg-5 ms-lg-5 ">
       <p class="recipe-description"><%= recipe.description %></p>
       <% if can? :manage, recipe %>
         <%= link_to "See details", user_recipe_path(user_id: recipe.user_id, id: recipe.id), class:"btn-solid" %>
