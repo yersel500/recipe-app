@@ -77,6 +77,7 @@ body {
 
 .recipe-details {
   padding: 1rem 2rem;
+  position: relative;
 }
 
 .recipe-time {
@@ -204,4 +205,53 @@ tr:nth-child(even) {
   font-size: 1rem;
   padding: 0.5rem;
   width: 100%;
+
+  option {
+    font-size: 1rem;   
+    padding: 10px 0;
+  }
+}
+
+.form-switch.form-switch-md {
+  padding-left: 4.5em;
+  height: 2.5em;
+}
+
+.form-switch.form-switch-md .form-check-input {
+  margin-left: -4.5em;
+  height: 2em;
+  width: 4em;
+}
+
+.public_button {
+  width: 5rem;
+  height: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  top:0;
+  right: 5%;  
+  
+  label {
+    padding-top: 10px;
+    font-weight: 900;   
+  }
+
+  #public_selector {
+    position: absolute; 
+
+  }
+
+  .btn-public {
+    position: absolute;
+    top:0;
+    right: 5%;
+    width: 5rem;
+    height: 3rem;
+    background-color: transparent;
+    opacity: 1;
+    outline: none;
+    border: none;
+
+  }
 }
