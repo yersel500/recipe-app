@@ -7,11 +7,18 @@ RSpec.describe 'RecipePage', type: :system do
                          created_at: '2022-06-15 06:29:35.011315',
                          confirmed_at: '2022-06-15 18:08:24.835529')
 
-    @r1 = Recipe.create(id: 111, user_id: @user.id, name: 'Chicken Fried', preparation_time: 1, cooking_time: 2,
+    @r1 = Recipe.create(id: 111, user_id: @user.id,
+                        name: 'Chicken Fried', preparation_time: 1, cooking_time: 2,
                         public: false)
-    @r2 = Recipe.create(user_id: @user.id, name: 'Special Food', preparation_time: 2, cooking_time: 0.25, public: false)
-    @r3 = Recipe.create(user_id: @user.id, name: 'Pizza', preparation_time: 1, cooking_time: 1.5, public: false)
-    @r4 = Recipe.create(user_id: @user.id, name: 'New Recipe', preparation_time: 3, cooking_time: 0.5, public: false)
+    @r2 = Recipe.create(user_id: @user.id,
+                        name: 'Special Food', preparation_time: 2, cooking_time: 0.25,
+                        public: false)
+    @r3 = Recipe.create(user_id: @user.id,
+                        name: 'Pizza', preparation_time: 1, cooking_time: 1.5,
+                        public: false)
+    @r4 = Recipe.create(user_id: @user.id,
+                        name: 'New Recipe', preparation_time: 3, cooking_time: 0.5,
+                        public: false)
   end
 
   context 'testing' do
