@@ -3,7 +3,7 @@ module RecipesHelper
     recipe.public
   end
 
-  def calulate_price(recipe)
+  def calculate_price(recipe)
     foods = recipe.foods
     recipe_foods = recipe.recipe_foods
     price = 0

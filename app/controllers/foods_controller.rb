@@ -21,9 +21,10 @@ class FoodsController < ApplicationController
     @food.user = user
 
     if @food.save
-      redirect_to user_food_path(user_id: @food.user_id, id: @food.id)
+      flash[:notice] = 'Food saved successfully'
+      redirect_to user_foods_path(user_id: @food.user_id)
     else
-      render :new, status: :unprocessable_entity
+      render :new, alert: :unprocessable_entity
     end
   end
 

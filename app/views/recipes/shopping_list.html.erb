@@ -3,7 +3,7 @@
   <% total_value = 0%>
   <% total_food = {} %>
   <% @recipes.each do |recipe| %>
-    <% recipe.recipe_foods.each do |recipe_food| %>
+    <% recipe.recipe_foods.includes(:food).each do |recipe_food| %>
       <% if total_food[recipe_food.food_id].nil? %>
         <% total_food[recipe_food.food_id] = recipe_food.quantity %>
       <% else %>
