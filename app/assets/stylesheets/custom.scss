@@ -13,19 +13,22 @@ html {
   --typography: #213a5a;
   --secondary-color: #f37a6d;
   --bg-color: #fff;
-  --shadow-color: #f6f5f3;
+  --shadow-color: #f4f1e0;
+}
+
+.navbar {
+  background-color: var(--shadow-color);
+  color: var(--typography);
 }
 
 body {
   background-color: var(--bg-color);
-  margin: 0 5%;
   color: var(--typography);
 }
 
 .recipes-list {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
 }
 
 .recipe-card {
@@ -35,11 +38,11 @@ body {
   box-shadow: 2px 2px 10px var(--typography);
   min-height: 10rem;
   border-radius: 0.5rem;
-  transition: transform 0.5s;
+  transition: box-shadow 0.5s;
 }
 
 .recipe-card:hover {
-  transform: scale(1.002);
+  box-shadow: 1px 1px 5px var(--secondary-color);
 }
 
 .recipe-btn-title {
@@ -48,7 +51,17 @@ body {
   justify-content: space-between;
 }
 
-.btn-link {
+.recipe-desc-holder {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.recipe-desc-holder a {
+  width: 8rem;
+}
+
+.btn-link-custom {
   padding: 0;
   background-color: transparent;
   border: none;
@@ -64,6 +77,7 @@ body {
 
 .recipe-details {
   padding: 1rem 2rem;
+  position: relative;
 }
 
 .recipe-time {
@@ -85,16 +99,19 @@ body {
   background-color: var(--secondary-color);
   color: var(--bg-color);
   border-radius: 0.2rem;
-  text-transform: uppercase;
+  text-transform: capitalize;
+  overflow: hidden;
   text-decoration: none;
-  padding: 0.8rem;
+  padding: 0.6rem;
   font-weight: 600;
   letter-spacing: 1.2px;
-  transition: all 0.5s ease;
+  transition: all 0.5s ease-in-out;
+  text-align: center;
+  max-width: 15rem;
 }
 
 .btn-solid:hover {
-  transform: scale(0.99);
+  color: var(--bg-color);
   background-color: #bd210f;
 }
 
@@ -178,4 +195,65 @@ tr:nth-child(even) {
     text-transform: uppercase;
     letter-spacing: 2px;
   }
+}
+
+.navbar-brand {
+  font-weight: 900;
+}
+
+#recipe_food_food_id {
+  font-size: 1rem;
+  padding: 0.5rem;
+  width: 100%;
+
+  option {
+    font-size: 1rem;
+    padding: 10px 0;
+  }
+}
+
+.form-switch.form-switch-md {
+  padding-left: 4.5em;
+  height: 2.5em;
+}
+
+.form-switch.form-switch-md .form-check-input {
+  margin-left: -4.5em;
+  height: 2em;
+  width: 4em;
+}
+
+.public_button {
+  width: 5rem;
+  height: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  top: 0;
+  right: 5%;
+
+  label {
+    padding-top: 10px;
+    font-weight: 900;
+  }
+
+  #public_selector {
+    position: absolute;
+  }
+
+  .btn-public {
+    position: absolute;
+    top: 0;
+    right: 5%;
+    width: 5rem;
+    height: 3rem;
+    background-color: transparent;
+    opacity: 1;
+    outline: none;
+    border: none;
+  }
+}
+
+.form-label {
+  margin-top: 10px;
 }

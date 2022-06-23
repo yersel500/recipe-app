@@ -1,0 +1,49 @@
+<h2 class="my-3"> Create new recipe </h2>
+<%= form_with model: @recipe, url: user_recipes_path  do |form| %>
+  <div>
+    <div class="field form-group w-50">
+      <%= form.label :name, class: "form-label" %><br />
+      <%= form.text_field :name, autofocus: true, autocomplete: "name", class: "form-control" %>
+    </div>
+    <% @recipe.errors.full_messages_for(:name).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+  <div>
+    <div class="field form-group w-50">
+      <%= form.label :preparation_time, class:"form-label" %><br />
+      <%= form.number_field :preparation_time, autofocus: true, step: :any, autocomplete: "preparation_time", class: "form-control" %>
+    </div>
+    <% @recipe.errors.full_messages_for(:preparation_time).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+  <div>
+    <div class="field form-group w-50">
+      <%= form.label :cooking_time, class:"form-label" %><br />
+      <%= form.number_field :cooking_time, autofocus: true, step: :any, autocomplete: "cooking_time", class: "form-control"%>
+    </div>
+    <% @recipe.errors.full_messages_for(:cooking_time).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+  <div>
+    <div class="field form-group w-50">
+      <%= form.label :description, class:"form-label" %><br />
+      <%= form.text_area :description, autofocus: true, autocomplete: "description",rows: 6, class: "form-control"  %>
+    </div>
+    <% @recipe.errors.full_messages_for(:description).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+  <div>
+    <div class="form-check form-switch mt-3 ">
+      <%= form.label :public, class: "form-check-label" %>
+      <%= form.check_box :public, class: "form-check-input" %>
+    </div>
+    <% @recipe.errors.full_messages_for(:public).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+  <%= form.submit "Create Recipe", class: 'btn-solid my-3 px-5 py-2'%>
+<% end %>

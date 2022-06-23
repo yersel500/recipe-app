@@ -6,18 +6,19 @@
     <th class="table-heading">Value </th>
     <th class="table-heading">Actions</th>
   </tr>
-  <% @foods.each_with_index do |food, index| %>
+  <% @recipe_foods.each_with_index do |recipe_food, index| %>
     <tr class="table-row">
       <td class="table-content"><%= index + 1 %></td>
-      <td class="table-content"><%= food.name %></td>
+      <td class="table-content"><%= recipe_food.food.name %></td>
       <td class="table-content">
-        <% food.measurement_unit %>
+        <%= recipe_food.quantity %><%= recipe_food.food.measurement_unit %>
       </td>
-      <td class="table-content"> $<%= food.price %> </td>
+      <td class="table-content"> $<%= recipe_food.food.price * recipe_food.quantity %> </td>
       <td class="table-content">
-        <div class="buttons">
-          <%= button_to "Update", user_recipes_path, method: :update, class: "btn-link" %>
-          <%= button_to "Remove", user_recipes_path,  method: :delete, class: "btn-link" %>
+        <div class="buttons">         
+          <%= button_to "Remove",
+            user_recipe_recipe_food_path(user_id: current_user.id, recipe_id: recipe_food.recipe_id, id: recipe_food.id ),
+            method: :delete, class: "btn-link-custom" %>
         </div>
       </td>
     </tr>

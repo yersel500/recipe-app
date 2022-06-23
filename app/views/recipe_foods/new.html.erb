@@ -1,0 +1,14 @@
+<h1>Add Recipe Foods</h1>
+<%= form_with model: @recipe_food, url: user_recipe_recipe_foods_path, method: :post do |form| %>
+  <div class="field form-group w-50">
+    <%= form.label :quantity, class: "form-label" %><br>
+    <%= form.number_field :quantity, class: "form-control" %>
+  </div>
+  <div class="field form-group w-50">
+    <%= form.label :food_id, class: "form-label" %><br>
+    <%= form.collection_select :food_id, Food.order(:name), :id, :name, class:'food-select' %>
+  </div>
+  <div>
+    <%= form.submit 'Add food to recipe', class: 'btn-solid my-3 px-5 py-2' %>
+  </div>
+<% end %>

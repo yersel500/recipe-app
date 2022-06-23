@@ -1,0 +1,13 @@
+<% @public_recipes.each do |recipe| %>
+  <div class="recipe-card py-3 px-5 my-2 d-flex gap-5 flex-row justify-content-between">
+    <div>
+      <h2> <%= recipe.name %> </h2>
+      <p> By <%= recipe.user.name %>
+    </div>
+    <div>
+      <p> Total Food Items: <%= recipe.foods.count %>
+      <p> Total Price: <%= calculate_price(recipe) %>
+      <%= link_to "See Recipe Details", user_recipe_path(user_id: recipe.user_id, id: recipe.id), class: "btn-solid d-block mt-3 py-2" %>
+    </div>
+  </div>
+<% end %>

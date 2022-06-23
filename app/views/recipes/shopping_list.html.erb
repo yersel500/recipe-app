@@ -1,0 +1,33 @@
+<section class="shopping-list">
+  <h1>Shopping List</h1>
+  <% total_value = 0%>
+  <% total_food = {} %>
+  <% @recipes.each do |recipe| %>
+    <% recipe.recipe_foods.includes(:food).each do |recipe_food| %>
+      <% if total_food[recipe_food.food_id].nil? %>
+        <% total_food[recipe_food.food_id] = recipe_food.quantity %>
+      <% else %>
+        <% total_food[recipe_food.food_id] += recipe_food.quantity %>
+      <% end %>
+      <% total_value += (recipe_food.food.price * recipe_food.quantity) %>
+    <% end %>
+  <% end %>
+  <p> Amount of items to buy: <%= total_food.length %></p>
+  <p>Total values of food needed: <%= total_value %> </p>
+</section>
+<table class="table">
+  <tr>
+    <th class="table-heading"><%= link_to "Food", sort:"food" %> </th>
+    <th class="table-heading"><%= link_to "Quantity", sort: "quantity" %> </th>
+    <th class="table-heading"> Price </th>
+  </tr>
+  <% total_food.each do |key, quantity| %>
+    <tr class="table-row">
+      <td class="table-content"><%= @foods.find(key).name %></td>
+      <td class="table-content">
+        <%= quantity %><%= @foods.find(key).measurement_unit %>
+      </td>
+      <td class="table-content"> $<%= @foods.find(key).price * quantity %> </td>
+    </tr>
+  <% end %>
+</table>
