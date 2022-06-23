@@ -5,7 +5,7 @@
       <% if can? :manage, recipe %>
         <%= button_to "REMOVE",
           user_recipe_path(user_id: recipe.user_id, id: recipe),  method: :delete,
-          data: { confirm: "Are you sure?" },
+          data: { confirm: "Are you sure?" },id: recipe.id,
           class: "btn-link-custom" %>
       <% end %>
     </div>

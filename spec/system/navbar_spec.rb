@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Navigation', type: :system do
+RSpec.describe 'Navigation', type: :feature do
   before :all do
     @user1 = User.create!(id: 1, name: 'Babi',
                           email: 'b@g.com', password: '123456',

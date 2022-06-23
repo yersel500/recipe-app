@@ -7,7 +7,7 @@
     <div>
       <p> Total Food Items: <%= recipe.foods.count %>
       <p> Total Price: <%= calculate_price(recipe) %>
-      <%= link_to "See Recipe Details", user_recipe_path(user_id: recipe.user_id, id: recipe.id), class: "btn-solid d-block mt-3" %>
+      <%= link_to "See Recipe Details", user_recipe_path(user_id: recipe.user_id, id: recipe.id), class: "btn-solid d-block mt-3 py-2" %>
     </div>
   </div>
 <% end %>

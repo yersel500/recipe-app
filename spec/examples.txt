@@ -1,17 +1,10 @@
 example_id                          | status | run_time        |
 ----------------------------------- | ------ | --------------- |
-./spec/features/login_spec.rb[1:1]  | passed | 0.01623 seconds |
-./spec/features/login_spec.rb[1:2]  | passed | 0.03648 seconds |
-./spec/features/login_spec.rb[1:3]  | passed | 1.73 seconds    |
-./spec/features/login_spec.rb[1:4]  | failed | 0.04708 seconds |
 ./spec/model/user_spec.rb[1:1:1]    | passed | 0.05248 seconds |
-./spec/system/login_spec.rb[1:1:1]  | failed | 0.00002 seconds |
-./spec/system/login_spec.rb[1:1:2]  | failed | 0.00002 seconds |
-./spec/system/login_spec.rb[1:1:3]  | failed | 0.00001 seconds |
-./spec/system/login_spec.rb[1:1:4]  | failed | 0.00001 seconds |
-./spec/system/navbar_spec.rb[1:1:1] | passed | 7.3 seconds     |
-./spec/system/navbar_spec.rb[1:1:2] | passed | 1.24 seconds    |
-./spec/system/navbar_spec.rb[1:1:3] | passed | 1.08 seconds    |
-./spec/system/navbar_spec.rb[1:1:4] | passed | 1.22 seconds    |
-./spec/system/navbar_spec.rb[1:1:5] | passed | 1.29 seconds    |
-./spec/system/navbar_spec.rb[1:1:6] | passed | 1.04 seconds    |
+./spec/system/login_spec.rb[1:1:1]  | passed | 0.95843 seconds |
+./spec/system/login_spec.rb[1:1:2]  | passed | 13.96 seconds   |
+./spec/system/login_spec.rb[1:1:3]  | passed | 2.05 seconds    |
+./spec/system/login_spec.rb[1:1:4]  | passed | 2.47 seconds    |
+./spec/system/recipe_spec.rb[1:1:1] | passed | 2.2 seconds     |
+./spec/system/recipe_spec.rb[1:1:2] | passed | 12.19 seconds   |
+./spec/system/recipe_spec.rb[1:1:3] | passed | 3.09 seconds    |

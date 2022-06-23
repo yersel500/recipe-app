@@ -9,12 +9,23 @@ html {
   font-size: 16px;
 }
 
+// // #8A9294, #BCCCC9, #14A073 and #0F6757
+// background-color: #0F6757;
+
+// :root {
+//   --typography:#144955;
+//   --secondary-color:  #14A073;
+//   --bg-color: #FFF;
+//   --shadow-color: #F4F1E0;
+// }
+
 :root {
   --typography: #213a5a;
   --secondary-color: #f37a6d;
   --bg-color: #fff;
-  --shadow-color: #fff2f2;
+  --shadow-color: #f4f1e0;
 }
+
 
 .navbar {
   background-color: var(--shadow-color);
@@ -228,7 +239,7 @@ tr:nth-child(even) {
   height: 3rem;
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: flex-start;
   top: 0;
   right: 5%;
 
@@ -252,4 +263,8 @@ tr:nth-child(even) {
     outline: none;
     border: none;
   }
+}
+
+.form-label {
+  margin-top:10px;
 }
