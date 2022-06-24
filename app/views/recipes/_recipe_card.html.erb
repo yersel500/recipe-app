@@ -1,5 +1,5 @@
 <% @recipes.each do |recipe| %>
-  <div class="recipe-card d-flex flex-row justify-content-center gap-lg-5">
+  <div class="recipe-card d-flex flex-row justify-content-between gap-lg-5">
     <div class="recipe-btn-title w-30 flex-grow-0">
       <h3 class="recipe-name"><%= recipe.name %> </h3>
       <% if can? :manage, recipe %>
@@ -9,12 +9,12 @@
           class: "btn-link-custom" %>
       <% end %>
     </div>
-    <div class="recipe-desc-holder ps-lg-5 ms-lg-5 d-flex flex-column align-items-end ">
+    <div class="recipe-desc-holder ps-lg-5 ms-lg-5 d-flex flex-column">
       <p class="recipe-description"><%= recipe.description %></p>
       <% if can? :manage, recipe %>
-        <%= link_to "See details", user_recipe_path(user_id: recipe.user_id, id: recipe.id), class:"btn-link-custom" %>
+        <%= link_to "See details", user_recipe_path(user_id: recipe.user_id, id: recipe.id), class:"btn-link-custom align-self-end" %>
       <% elsif public? recipe %>
-        <%= link_to "See details", user_recipe_path(user_id: recipe.user_id, id: recipe.id), class:"btn-link-custom" %>
+        <%= link_to "See details", user_recipe_path(user_id: recipe.user_id, id: recipe.id), class:"btn-link-custom align-self-end" %>
       <% end %>
     </div>
   </div>
