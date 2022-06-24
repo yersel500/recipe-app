@@ -33,9 +33,13 @@ To get a local copy up and running follow these simple example steps.
     - run `rails db:create`
     - run `rails db:migrate`
     - 
-## Running the Application
+## Running the Application Locally
 >**Steps to excute the app locally*
   - Run `rails s` in the console at working directory
+
+## Running the Application Live
+>**Steps to excute the app on browser*
+  [Live Demo](https://glacial-stream-24558.herokuapp.com/)
 
 ## Authors
 
