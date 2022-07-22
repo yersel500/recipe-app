@@ -3,13 +3,14 @@
   <head>
     <title>RecipeApp</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta property="og:title" content="Recipe App - Built with Ruby on Rails" />
+    <meta property="og:description" content="The Recipe app keeps track of all your recipes, ingredients, and inventory." />
+    <meta property="og:image" content="https://img001.prntscr.com/file/img001/oQHBsIZYTEWcvPRXJ6Z3-A.png" />
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
-
   <body>
     <%=  render partial: "shared/navbar" %>
     <%= render partial: "shared/message" %>
