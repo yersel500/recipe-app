@@ -39,7 +39,7 @@ To get a local copy up and running follow these simple example steps.
 
 ## Running the Application Live
 >**Steps to excute the app on browser*
-  [Live Demo](https://glacial-stream-24558.herokuapp.com/)
+  [Live Demo](https://my-recipeapp.herokuapp.com/)
 
 ## Authors
 
